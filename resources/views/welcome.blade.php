@@ -22,14 +22,14 @@
     </head>
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-        
+
             <div style = "color:purple;">
-            
+
                 <h1>TO DO LIST</h1>
 
 
                 <form method="post" action="{{ route('saveItem') }}" accept-charset="UTF-8">
-                {{ csrf_field() }}
+                @csrf
 
                 <label for="listItem">New thing you need to do</label> </br>
                 <input type="text" name="listItem" style="  border: none; border-bottom: 2px solid gray;"> </br>
@@ -41,10 +41,10 @@
 
                 @foreach ($listItems as $listItem)
                 <div class='flex' style="align-items: center;">
-                    <p> - {{ $listItem->name}} </p>
+                    <p> - {{ $listItem->name }} </p>
 
                     <form method="post" action="{{ route('completeItem', $listItem->id) }}" accept-charset="UTF-8">
-                       {{ csrf_field() }}
+                        @csrf
                         <button type="submit" style="max-height: 25px ; background-color :purple ; color:white ; margin-left: 20px;"> Mark when done </button>
                     </form>
                 </div>
