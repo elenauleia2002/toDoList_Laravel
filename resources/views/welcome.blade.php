@@ -54,6 +54,7 @@
                     </form>
                 </div>
                 @endforeach
+                {{-- {{ $documents->onEachSide(5)->links() }} --}}
 
 
 
