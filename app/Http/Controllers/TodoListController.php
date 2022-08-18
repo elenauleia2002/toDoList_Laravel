@@ -12,9 +12,7 @@ class TodoListController extends Controller
     }
 
     public function completeItem($id){
-        $listItem = ListItem::find($id);
-        $listItem->is_complete = 1;
-        $listItem->save();
+        $listItem = ListItem::find($id)->update('is_complete', true);
 
         return redirect('/');
     }
