@@ -40,7 +40,7 @@
 
 
                 @foreach ($listItems as $listItem)
-                    @if ($listItem->is_complete == true)
+                    @if ($listItem->is_complete == true && ($_GET['filter'] ?? null == 'all'))
                         <div class='flex' style="align-items: center;">
                             <p class="" style="color:rgb(92, 91, 91)"> - {{ $listItem->name }} </p>
                         </div>

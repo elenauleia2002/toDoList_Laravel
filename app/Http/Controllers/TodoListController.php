@@ -19,7 +19,8 @@ class TodoListController extends Controller
     public function completeItem($id){
         $listItem = ListItem::findOrFail($id)->update(['is_complete' => true]);
 
-        return redirect('/');
+        // return redirect('/');
+        return back();
     }
 
     public function saveItem(Request $request) {
@@ -28,7 +29,8 @@ class TodoListController extends Controller
             $newListItem = ListItem::create(['name' => $request->listItem , 'is_complete' => false]);
         }
 
-        return redirect('/');
+        // return redirect('/');
+        return back();
     }
 
 
