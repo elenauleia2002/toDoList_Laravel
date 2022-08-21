@@ -44,15 +44,16 @@
                         <div class='flex' style="align-items: center;">
                             <p class="" style="color:rgb(92, 91, 91)"> - {{ $listItem->name }} </p>
                         </div>
-                    @endif
-                    <div class='flex' style="align-items: center;">
-                        <p> - {{ $listItem->name }} </p>
+                    @else
+                        <div class='flex' style="align-items: center;">
+                            <p> - {{ $listItem->name }} </p>
 
-                        <form method="post" action="{{ route('completeItem', $listItem->id) }}" accept-charset="UTF-8">
-                            @csrf
-                            <button type="submit" style="max-height: 25px ; background-color :purple ; color:white ; margin-left: 20px;"> Mark when done </button>
-                        </form>
-                    </div>
+                            <form method="post" action="{{ route('completeItem', $listItem->id) }}" accept-charset="UTF-8">
+                                @csrf
+                                <button type="submit" style="max-height: 25px ; background-color :purple ; color:white ; margin-left: 20px;"> Mark when done </button>
+                            </form>
+                        </div>
+                    @endif
                 @endforeach
                 {{-- {{ $documents->onEachSide(5)->links() }} --}}
 
